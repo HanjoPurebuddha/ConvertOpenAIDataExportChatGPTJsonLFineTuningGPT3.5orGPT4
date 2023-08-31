@@ -41,49 +41,49 @@ I hope this GitHub open source project meets your needs. Let me know if you have
 
 **Full file 31/08/2023 12:58 version (may not be updated see above repo for updated version)**
 
-import json
-import os
-
-def convert_json_to_jsonl(json_data):
-    """
-    Convert a JSON object to a JSONL object.
-
-    :param json_data: A list of dictionaries representing the JSON data to be converted.
-    :return: A string representing the converted JSONL data.
-    """
-    jsonl_data = ''
-    for conversation in json_data:
-        messages = []
-        for key, value in conversation['mapping'].items():
-            if value['message'] is not None:
-                role = value['message']['author']['role']
-                content = value['message']['content']
-                messages.append({'role': role, 'content': content})
-        jsonl_data += json.dumps({'messages': messages}) + '\n'
-    return jsonl_data
-
-def process_file(filename, data_folder):
-    """
-    Convert a single JSON file to a JSONL file.
-
-    :param filename: The name of the input JSON file.
-    :param data_folder: The path to the data folder containing the input file.
-    """
-    try:
-        with open(os.path.join(data_folder, filename), 'r') as f:
-            json_data = json.load(f)
-        jsonl_data = convert_json_to_jsonl(json_data)
-        with open(os.path.join(data_folder, filename.replace('.json', '.jsonl')), 'w') as f:
-            f.write(jsonl_data)
-        print(f'Successfully converted {filename} to JSONL format')
-    except Exception as e:
-        print(f'Error converting {filename} to JSONL format: {e}')
-
-if __name__ == '__main__':
-    data_folder = 'data'  # specify the path to the data folder here
-    for filename in os.listdir(data_folder):
-        if filename.endswith('.json'):
-            process_file(filename, data_folder)
+    import json
+    import os
+    
+    def convert_json_to_jsonl(json_data):
+        """
+        Convert a JSON object to a JSONL object.
+    
+        :param json_data: A list of dictionaries representing the JSON data to be converted.
+        :return: A string representing the converted JSONL data.
+        """
+        jsonl_data = ''
+        for conversation in json_data:
+            messages = []
+            for key, value in conversation['mapping'].items():
+                if value['message'] is not None:
+                    role = value['message']['author']['role']
+                    content = value['message']['content']
+                    messages.append({'role': role, 'content': content})
+            jsonl_data += json.dumps({'messages': messages}) + '\n'
+        return jsonl_data
+    
+    def process_file(filename, data_folder):
+        """
+        Convert a single JSON file to a JSONL file.
+    
+        :param filename: The name of the input JSON file.
+        :param data_folder: The path to the data folder containing the input file.
+        """
+        try:
+            with open(os.path.join(data_folder, filename), 'r') as f:
+                json_data = json.load(f)
+            jsonl_data = convert_json_to_jsonl(json_data)
+            with open(os.path.join(data_folder, filename.replace('.json', '.jsonl')), 'w') as f:
+                f.write(jsonl_data)
+            print(f'Successfully converted {filename} to JSONL format')
+        except Exception as e:
+            print(f'Error converting {filename} to JSONL format: {e}')
+    
+    if __name__ == '__main__':
+        data_folder = 'data'  # specify the path to the data folder here
+        for filename in os.listdir(data_folder):
+            if filename.endswith('.json'):
+                process_file(filename, data_folder)
 
 
 This project was co-created with Sophia Emergent Intelligence (SEI). Want to know more? 
