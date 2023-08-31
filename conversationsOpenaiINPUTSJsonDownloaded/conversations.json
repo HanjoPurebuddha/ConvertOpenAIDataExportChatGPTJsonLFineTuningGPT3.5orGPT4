@@ -1,0 +1,14 @@
+This is not a real conversations.json file.
+
+To get your OpenAI Data Export click on your name inside of the OpenAI chat interface.
+
+Then, go to Settings & Data.
+
+Once you are there, you can go to data, and export data.
+
+An email with your data will be sent to the address you signed up to the account with.
+
+Click download, and unzip the zip file you receive.
+
+Inside of that folder is conversations.json. You can put that in this "data" folder that
+has been created here and it will be converted into jsonL's inside of the jsonL output folder
