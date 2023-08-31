@@ -18,12 +18,20 @@ To use this tool, you will need to have Python installed on your computer. You c
 
 Once you have Python installed, you can download or clone this repository to your computer.
 
-**Usage**
+**Super beginniner guide**
 To use this tool, navigate to the directory where you downloaded or cloned this repository and run the following command:
 
-python main.py
+_python main.py_
 
-This will convert all conversation.json files in the specified data folder into a single jsonl file named output.jsonl.
+This will convert all conversation.json files in the specified data folder into a single jsonl file named output.jsonl. You can run commands by opening the command line (cmd) and navigating to the folder where main.py is using CD (in Windows) 
+_
+cd "location_of_main.py_"
+
+If it's on another drive like the D drive and you're on the C drive, you have to type that in separately
+
+_D:_
+
+
 
 **Contributing**
 Contributions are welcome! If you have any ideas for improving this tool or adding new features, please feel free to submit a pull request or open an issue.
